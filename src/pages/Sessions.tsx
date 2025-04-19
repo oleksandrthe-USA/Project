@@ -4,6 +4,7 @@ import { films } from '../data/films';
 import { Card } from '@/components/ui/card';
 import { Link } from 'react-router-dom';
 import { useSessions } from '../lib/useSessions';
+import { BookingModal } from '@/components/booking/BookingModal';
 
 export default function SessionsPage() {
   const { t, i18n } = useTranslation();
@@ -27,6 +28,14 @@ export default function SessionsPage() {
       );
     })
   }, [date, time, genre, sessions]);
+
+  // Функція для конвертації ціни
+  const formatPrice = (priceUAH: number) => {
+    const rate = Number(t('currency_rate'));
+    const currency = t('currency');
+    const price = (priceUAH * rate).toFixed(2);
+    return `${price} ${currency}`;
+  };
 
   return (
     <div>
@@ -80,11 +89,21 @@ export default function SessionsPage() {
                   <div className="mb-1">{film.description[lang]}</div>
                   <div className="flex flex-row gap-4 items-center">
                     <span className="font-semibold text-yellow-600">★ {film.rating}</span>
-                    <span className="font-semibold">{t('price', 'Price')}: <span className="text-blue-700 dark:text-blue-400">{sess.price} грн</span></span>
+                    <span className="font-semibold">{t('price', 'Price')}: <span className="text-blue-700 dark:text-blue-400">{formatPrice(sess.price)}</span></span>
                   </div>
-                  <Link to={`/film/${film.id}`}
-                    className="self-end inline-block font-medium underline text-blue-600 mt-1"
-                  >{t('details', 'Details')}</Link>
+                  <div className="flex justify-between items-center mt-2">
+                    <Link to={`/film/${film.id}`}
+                      className="inline-block font-medium underline text-blue-600"
+                    >{t('details', 'Details')}</Link>
+                    <BookingModal
+                      session={{
+                        ...sess,
+                        availableSeats: Array.from({ length: 40 }, (_, i) => i + 1), // Приклад: 40 місць
+                        totalSeats: 40
+                      }}
+                      filmTitle={film.title[lang]}
+                    />
+                  </div>
                 </div>
               </Card>
             );

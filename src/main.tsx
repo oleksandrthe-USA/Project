@@ -6,6 +6,7 @@ import './index.css';
 import i18n from 'i18next';
 import { I18nextProvider } from 'react-i18next';
 import { initReactI18next } from 'react-i18next';
+import { AuthProvider } from './contexts/AuthContext';
 
 const resources = {
   en: {
@@ -66,6 +67,37 @@ const resources = {
       edit_session: 'Edit Session',
       film: 'Film',
       choose_film: 'Choose film',
+      currency: '$',
+      currency_rate: 0.027,
+      // Auth translations
+      login: 'Login',
+      register: 'Register',
+      logout: 'Logout',
+      email: 'Email',
+      password: 'Password',
+      name: 'Name',
+      login_success: 'Login successful',
+      welcome_back: 'Welcome back!',
+      register_success: 'Registration successful',
+      account_created: 'Your account has been created',
+      auth_error: 'Authentication Error',
+      auth_error_desc: 'Please check your credentials and try again',
+      need_account: 'Need an account?',
+      have_account: 'Already have an account?',
+      login_desc: 'Enter your credentials to access your account',
+      register_desc: 'Create a new account to start booking tickets',
+      // Booking translations
+      book_tickets: 'Book Tickets',
+      book_tickets_for: 'Book Tickets for',
+      screen: 'Screen',
+      selected_seats: 'Selected Seats',
+      total_price: 'Total Price',
+      confirm_booking: 'Confirm Booking',
+      booking_success: 'Booking Successful',
+      booking_confirmed: 'Your booking has been confirmed',
+      booking_error: 'Booking Error',
+      booking_failed: 'Failed to book tickets. Please try again.',
+      select_seats: 'Please select at least one seat'
     },
   },
   ua: {
@@ -126,6 +158,37 @@ const resources = {
       edit_session: 'Редагувати сеанс',
       film: 'Фільм',
       choose_film: 'Оберіть фільм',
+      currency: 'грн',
+      currency_rate: 1,
+      // Auth translations
+      login: 'Увійти',
+      register: 'Зареєструватися',
+      logout: 'Вийти',
+      email: 'Електронна пошта',
+      password: 'Пароль',
+      name: 'Ім\'я',
+      login_success: 'Вхід успішний',
+      welcome_back: 'З поверненням!',
+      register_success: 'Реєстрація успішна',
+      account_created: 'Ваш аккаунт створено',
+      auth_error: 'Помилка аутентифікації',
+      auth_error_desc: 'Перевірте ваші дані та спробуйте знову',
+      need_account: 'Потрібен аккаунт?',
+      have_account: 'Вже маєте аккаунт?',
+      login_desc: 'Введіть ваші дані для входу',
+      register_desc: 'Створіть новий аккаунт для бронювання квитків',
+      // Booking translations
+      book_tickets: 'Забронювати квитки',
+      book_tickets_for: 'Бронювання квитків на',
+      screen: 'Екран',
+      selected_seats: 'Вибрані місця',
+      total_price: 'Загальна вартість',
+      confirm_booking: 'Підтвердити бронювання',
+      booking_success: 'Бронювання успішне',
+      booking_confirmed: 'Ваше бронювання підтверджено',
+      booking_error: 'Помилка бронювання',
+      booking_failed: 'Не вдалося забронювати квитки. Спробуйте ще раз.',
+      select_seats: 'Будь ласка, виберіть хоча б одне місце'
     },
   },
 };
@@ -147,7 +210,9 @@ if (!rootElement) {
 ReactDOM.createRoot(rootElement).render(
   <React.StrictMode>
     <I18nextProvider i18n={i18n}>
-      <App />
+      <AuthProvider>
+        <App />
+      </AuthProvider>
     </I18nextProvider>
   </React.StrictMode>
 );
