@@ -1,0 +1,177 @@
+import type { Film } from '../types/film';
+
+export const films: Film[] = [
+  {
+    id: '1',
+    poster: '/posters/Dune Part Two.jpg',
+    title: {
+      en: 'Dune: Part Two',
+      ua: 'Дюна: Частина друга',
+    },
+    genres: ['Science Fiction', 'Adventure', 'Drama'],
+    description: {
+      en: 'Paul Atreides unites with Chani and the Fremen while seeking revenge against the conspirators who destroyed his family.',
+      ua: 'Пол Атрідес об\'єднується з Чані та Фременами, прагнучи помститися змовникам, які знищили його родину.',
+    },
+    rating: 8.7,
+    releaseDate: '2024-02-29',
+    trailer: 'https://www.youtube.com/watch?v=Way9Dexny3w',
+    actors: ['Timothée Chalamet', 'Zendaya', 'Rebecca Ferguson', 'Josh Brolin'],
+    isNew: true,
+  },
+  {
+    id: '2',
+    poster: '/posters/Mission Impossible – The Final Reckoning.jpg',
+    title: {
+      en: 'Mission Impossible – The Final Reckoning',
+      ua: 'Місія нездійсненна – Останній розрахунок',
+    },
+    genres: ['Action', 'Thriller', 'Adventure'],
+    description: {
+      en: 'Ethan Hunt faces his most dangerous mission yet in this epic conclusion to the Mission: Impossible saga.',
+      ua: 'Ітан Хант стикається зі своєю найнебезпечнішою місією в епічному завершенні саги "Місія нездійсненна".',
+    },
+    rating: 8.5,
+    releaseDate: '2024-05-23',
+    trailer: 'https://www.youtube.com/watch?v=2m1drlOZSDw',
+    actors: ['Tom Cruise', 'Hayley Atwell', 'Simon Pegg', 'Rebecca Ferguson'],
+    isNew: true,
+  },
+  {
+    id: '3',
+    poster: '/posters/The Witcher Origins.jpg',
+    title: {
+      en: 'The Witcher: Origins',
+      ua: 'Відьмак: Походження',
+    },
+    genres: ['Fantasy', 'Action', 'Adventure'],
+    description: {
+      en: 'Discover the untold story of the first Witcher and the events that shaped the Continent.',
+      ua: 'Відкрийте невідому історію першого Відьмака та події, які сформували Континент.',
+    },
+    rating: 8.3,
+    releaseDate: '2024-03-15',
+    trailer: 'https://www.youtube.com/watch?v=aTPPmHqMZOw',
+    actors: ['Joel Kinnaman', 'Anya Chalotra', 'Michelle Yeoh'],
+    isNew: true,
+  },
+  {
+    id: '4',
+    poster: '/posters/Zootopia 2.jpg',
+    title: {
+      en: 'Zootopia 2',
+      ua: 'Зоотрополіс 2',
+    },
+    genres: ['Animation', 'Adventure', 'Comedy'],
+    description: {
+      en: 'Judy Hopps and Nick Wilde return in a new adventure that will challenge their friendship and the harmony of Zootopia.',
+      ua: 'Джуді Гопс і Нік Вайлд повертаються у новій пригоді, яка випробує їхню дружбу та гармонію Зоотрополісу.',
+    },
+    rating: 7.9,
+    releaseDate: '2024-01-20',
+    trailer: 'https://www.youtube.com/watch?v=jWM0ct-OLsM',
+    actors: ['Ginnifer Goodwin', 'Jason Bateman', 'Idris Elba'],
+  },
+  {
+    id: '5',
+    poster: '/posters/Paddington in Peru.jpg',
+    title: {
+      en: 'Paddington in Peru',
+      ua: 'Паддінгтон у Перу',
+    },
+    genres: ['Family', 'Comedy', 'Adventure'],
+    description: {
+      en: 'Paddington embarks on an epic adventure to Peru, discovering his roots and facing new challenges.',
+      ua: 'Паддінгтон вирушає в епічну пригоду до Перу, відкриваючи своє коріння та зустрічаючи нові виклики.',
+    },
+    rating: 7.8,
+    releaseDate: '2024-01-15',
+    trailer: 'https://www.youtube.com/watch?v=0l4Dhj6J9XY',
+    actors: ['Ben Whishaw', 'Hugh Bonneville', 'Sally Hawkins'],
+  },
+  {
+    id: '6',
+    poster: '/posters/Avatar Fire and Ash.jpg',
+    title: {
+      en: 'Avatar: Fire and Ash',
+      ua: 'Аватар: Вогонь і Попіл',
+    },
+    genres: ['Science Fiction', 'Action', 'Adventure'],
+    description: {
+      en: 'Return to Pandora in this new chapter of the Avatar saga, where ancient prophecies and new threats emerge.',
+      ua: 'Поверніться на Пандору в новій главі саги Аватар, де з\'являються древні пророцтва та нові загрози.',
+    },
+    rating: 8.4,
+    releaseDate: '2024-02-10',
+    trailer: 'https://www.youtube.com/watch?v=d9MyW72ELq0',
+    actors: ['Sam Worthington', 'Zoe Saldana', 'Sigourney Weaver'],
+  },
+  {
+    id: '7',
+    poster: '/posters/Black Bag.jpg',
+    title: {
+      en: 'Black Bag',
+      ua: 'Чорна Сумка',
+    },
+    genres: ['Thriller', 'Mystery', 'Crime'],
+    description: {
+      en: 'A mysterious black bag leads a detective into a web of conspiracy and danger.',
+      ua: 'Таємнича чорна сумка веде детектива у павутину змови та небезпеки.',
+    },
+    rating: 7.6,
+    releaseDate: '2024-01-30',
+    trailer: 'https://www.youtube.com/watch?v=uYPbbksJxIg',
+    actors: ['Michael Fassbender', 'Rebecca Ferguson', 'Oscar Isaac'],
+  },
+  {
+    id: '8',
+    poster: '/posters/Heart Eyes.jpg',
+    title: {
+      en: 'Heart Eyes',
+      ua: 'Закохані Очі',
+    },
+    genres: ['Romance', 'Drama', 'Comedy'],
+    description: {
+      en: 'A heartwarming story about finding love in the most unexpected places.',
+      ua: 'Зворушлива історія про знаходження кохання в найнесподіваніших місцях.',
+    },
+    rating: 7.5,
+    releaseDate: '2024-02-14',
+    trailer: 'https://www.youtube.com/watch?v=6sxCFZ8_d84',
+    actors: ['Emma Stone', 'Ryan Gosling', 'Rachel McAdams'],
+  },
+  {
+    id: '9',
+    poster: '/posters/Minecraft The Movie.jpeg',
+    title: {
+      en: 'Minecraft: The Movie',
+      ua: 'Майнкрафт: Фільм',
+    },
+    genres: ['Animation', 'Adventure', 'Family'],
+    description: {
+      en: 'Join Steve and his friends in an epic adventure through the blocky world of Minecraft.',
+      ua: 'Приєднуйтесь до Стіва та його друзів у епічній пригоді через блоковий світ Майнкрафту.',
+    },
+    rating: 7.7,
+    releaseDate: '2024-04-01',
+    trailer: 'https://www.youtube.com/watch?v=MmB9b5njVbA',
+    actors: ['Jack Black', 'Steve Carell', 'Elizabeth Banks'],
+  },
+  {
+    id: '10',
+    poster: '/posters/Eddington.jpg',
+    title: {
+      en: 'Eddington',
+      ua: 'Еддінгтон',
+    },
+    genres: ['Drama', 'Biography', 'Science'],
+    description: {
+      en: 'The remarkable story of Arthur Eddington, the astronomer who proved Einstein\'s theory of relativity.',
+      ua: 'Дивовижна історія Артура Еддінгтона, астронома, який довів теорію відносності Ейнштейна.',
+    },
+    rating: 8.1,
+    releaseDate: '2024-03-01',
+    trailer: 'https://www.youtube.com/watch?v=Salz7uGp72c',
+    actors: ['Benedict Cumberbatch', 'Eddie Redmayne', 'Felicity Jones'],
+  },
+];
