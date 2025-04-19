@@ -67,6 +67,12 @@ export default function SessionsPage() {
                   src={film.poster}
                   alt={film.title[lang]}
                   className="w-24 h-36 object-cover rounded"
+                  loading="lazy"
+                  onError={(e) => {
+                    const img = e.currentTarget;
+                    img.style.opacity = '0.5';
+                    img.style.backgroundColor = '#f3f4f6';
+                  }}
                 />
                 <div className="flex-1 flex flex-col gap-2">
                   <h2 className="font-bold text-lg">{film.title[lang]}</h2>

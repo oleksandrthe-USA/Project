@@ -246,23 +246,36 @@ function SessionsAdmin({ lang }: { lang: 'en' | 'ua' }) {
     resetForm();
   };
 
-  const onSubmit = (e: any) => {
+  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const newSession: Session = {
-      id: editId || Math.random().toString(36).slice(2),
-      filmId: form.filmId,
-      date: form.date,
-      time: form.time,
-      price: Number(form.price)
-    };
-    
-    if (editId) {
-      updateSession(editId, newSession);
-    } else {
-      addSession(newSession);
+    const formData = new FormData(e.currentTarget);
+    const price = Number(form.price);
+
+    // Validate price
+    if (isNaN(price) || price < 0) {
+      alert(t('invalid_price', 'Price must be a positive number'));
+      return;
     }
-    setEditId(null);
-    resetForm();
+
+    try {
+      const sessionData: Session = {
+        id: editId || Math.random().toString(36).slice(2),
+        filmId: form.filmId,
+        date: form.date,
+        time: form.time,
+        price
+      };
+
+      if (editId) {
+        updateSession(editId, sessionData);
+      } else {
+        addSession(sessionData);
+      }
+      resetForm();
+    } catch (error) {
+      console.error('Error saving session:', error);
+      alert(t('save_error', 'Error saving session. Please try again.'));
+    }
   };
 
   return (
